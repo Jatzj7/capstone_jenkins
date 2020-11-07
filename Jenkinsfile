@@ -1,6 +1,6 @@
 pipeline { 
     environment { 
-        registry = "jatin/flask-jenkins-docker-cicd" 
+        registry = "jatin/capstone2" 
         registryCredential = 'dockerhub_id' 
         dockerImage = '' 
     }
