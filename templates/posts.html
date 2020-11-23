@@ -32,6 +32,7 @@
         {% for post in posts %}
         <h3>{{ post.title }}</h3>
         <p>{{ post.content }}</p>
+        <p>{{ post.date_posted }}</p>
         <a class="btn btn-default" href='posts/delete/{{post.id}}'>Delete</a>
         <a class="btn btn-default" href='posts/edit/{{post.id}}'>Edit</a>
         <hr>

@@ -31,13 +31,6 @@ def posts():
     all_posts = BlogPost.query.order_by(BlogPost.date_posted).all()
     return render_template('posts.html', posts = all_posts)
 
-@app.route('/home/users/<string:name>/posts/<int:id>')
-def hello(name, id):
-    return "Hello " + name + " World " + str(id)
-
-@app.route('/onlyget', methods=['GET'])
-def get_req():
-    return "ONLY GET"
 
 @app.route('/posts/delete/<int:id>')
 def delete(id):
