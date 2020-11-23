@@ -11,7 +11,7 @@
 <div class="jumbotron">
     <div class="container">
         <hr>
-        <h1>Create New Post:</h1>
+        <h1>Add Post:</h1>
         <form action="/posts" method="POST" id="usrform">
             <h3>Title:</h3><br> <input type="text" name="title" id="title">
             <br>
@@ -26,18 +26,18 @@
 {% if posts %}
 
 <div class="container" id="all-posts">
-    <h1>All Post</h1>
-    <!-- Example row of columns -->
+    <h1>Posts</h1>
     <div class="row">
         {% for post in posts %}
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.content }}</p>
-        <p>{{ post.date_posted }}</p>
-        <a class="btn btn-default" href='posts/delete/{{post.id}}'>Delete</a>
-        <a class="btn btn-default" href='posts/edit/{{post.id}}'>Edit</a>
+        <div id="post" style="background-color:khaki; padding: 10px;">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <p>{{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+            <a class="btn btn-danger" href='posts/delete/{{post.id}}'>Delete</a>
+            <a class="btn btn-warning" href='posts/edit/{{post.id}}'>Edit</a>
+        </div>
         <hr>
         {% endfor %}
-    <hr>
 </div>
 {% endif %}
 
